@@ -20,7 +20,7 @@
 #define PANNIC_TIME     1000        // interval number of pannic ghosts
 #define FLASH_INTERVAL 200          // flash interval of powerballs
 
-/* Game control class */
+// Game control class
 class Game : public QGraphicsScene
 {
     Q_OBJECT
@@ -34,13 +34,13 @@ public:
     void pacman_next_direction(GameObject::Dir);
     int get_score();
 
-    GameObject ***map;              // the map of pacman game
-    GameObject *gate;               // pointer of the gate of cage of ghosts
-    Pacman *pacman;                 // pointer of pacman
-    Ghost *ghost[Ghost::GhostNum];  // pointers of ghosts
-    QVector<GameObject*> powerball; // pointers of powerball
+    GameObject*** map;
+    GameObject* gate;
+    Pacman* pacman;
+    Ghost* ghost[Ghost::GhostNum];
+    QVector<GameObject*> powerball;
     GameStatus stat;
-    QTimer * timer;
+    QTimer* timer;
 
 
     friend class Pacman;
@@ -59,9 +59,9 @@ private:
     int ball_num, eat_num, score;
     int geo_x, geo_y;
 
-    QTimer *ghost_timer[Ghost::GhostNum];
-    QTimer *pacman_timer;
-    QTimer *powerball_flash_timer;
+    QTimer* ghost_timer[Ghost::GhostNum];
+    QTimer* pacman_timer;
+    QTimer* powerball_flash_timer;
     bool flash_tick;
     void addWallPic();
     QVector<QPixmap> wallPics;
